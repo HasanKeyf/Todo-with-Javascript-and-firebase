@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    
+    <title></title>
+</head>
+<body onload="studentsApp.getStudent()">
+
+    <div class="alert alert-dismissable alert-info" id="informationBox">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <img src="http://livemans.com/wp-content/uploads/2014/08/loading.gif"
+             width="80" height="80" />
+         <h2 id="statusMessage">
+            Getting student list form FireBase...!
+        </h2>
+    </div>
+
+
+<div class="nav navbar">
+
+
+  
+</div>
+
+    <div class="panel panel-primary" id="studentAddEdit" style="display:none;">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                Add New Student
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div>
+
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" class="form-control" id="studentName" />
+                </div>
+
+                <div class="form-group">
+                    <label for="studentHouse">Student House</label>
+                    <input type="text" class="form-control" id="studentHouse" />
+                </div>
+
+                <div class="form-group">
+                    <label for="studentYear">Student Year</label>
+                    <input type="text" class="form-control" id="studentYear" />
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button onclick="studentsApp.createStudent()" class="btn btn-default">Submit</button>
+            <button id="cancelAddEditBtn" class="btn btn-danger">Cancel</button>
+
+        </div>
+    </div>
+
+    <div class="col-lg-3 pull-right"><button id="addNewStudentBtn" class="btn btn-primary">Add new student</button>
+    <br />
+        <br />
+
+    </div>
+    
+
+
+  
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                          
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                House
+                            </th>
+                            <th>
+                                Year
+
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                   <tr></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+   
+
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="students.js"></script>
+
+    <script>
+        $('#addNewStudentBtn').click(function () {
+
+            $('#studentAddEdit').slideDown(500);
+        })
+
+        $('#cancelAddEditBtn').click(function () {
+
+            $('#studentAddEdit').slideUp(500);
+        })
+
+        
+
+    </script>
+</body>
+</html>

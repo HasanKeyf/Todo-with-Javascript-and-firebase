@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div id='output'></div>
+
+    <div id='success'></div>
+    <div id='error'></div>
+
+    <button id="doAjax" onclick="doAjax()">Do Ajax</button>
+
+    <script>
+
+        var doAjax = function(){
+
+            var url='https://codercamps.firebaseio.com/.json';
+            var errorDiv = document.getElementById('error');
+            var successDiv = document.getElementById('success');
+            var ajax = new XMLHttpRequest();
+   
+
+            ajax.open('GET', url, true);
+            ajax.onload= function(){
+    
+                if(this.status >= '200' && this.status <= '400')
+                {
+                    successDiv.innerHTML = this.response;
+                }
+               
+               }
+  
+            ajax.onerror = function(){
+  
+                errorDiv.innerHTML =this.response;
+            }
+  
+            
+            ajax.send();
+        }
+     
+    </script>
+</body>
+</html>
+

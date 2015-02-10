@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+    
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-8 column">
+                <div style="height:950px;" class="list-group pre-scrollable">
+                    <a href="#" class="list-group-item active">Chat Panel</a>
+                   <div id="messages">
+                       <div></div>
+                   </div>
+                 
+                   
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                           Your Message
+                        </h3>
+                        <div id="loading" class="nav-tabs">
+                            <img width="30" height="30" src="https://www.findshare.com/assets/images/loading-blue.gif" />
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <input type="text" class="form-control btn-block" id="messageInput" />
+                        
+                    </div>
+                    <div class="panel-footer">
+                        <button id="submitBtn" class="btn btn-primary btn-block">Send</button>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="datTime.js"></script>
+    <script src="chat.js"></script>
+
+    <script>
+        $('#submitBtn').click(function () {
+            chatApp.sendMessage();
+        });
+
+        $(document).ready(function () {
+            //chatApp.getMessages();
+            setInterval(function () {
+              //  $('#loading').show();
+                chatApp.getMessages();
+                console.log("Checking SERVER...");
+            }, 1000);
+     
+     
+            //
+        });
+    </script>
+  
+</body>
+</html>

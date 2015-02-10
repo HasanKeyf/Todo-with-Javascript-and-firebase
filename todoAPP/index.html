@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="navbar navbar-default" role="navigation" >
+
+    </div>
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                
+                <div class="col-sm-4">
+                    <div  class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Space Ship Operation
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="newShipName">Ship name</label>
+                                <input type="text" class="form-control" id="newShipName" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="newShipType">Ship Type</label>
+                                <select class="form-control" id="newShipType" >
+                                    <option  selected>Select</option>
+                                    <option value="Type 1" >Ship Type 1</option>
+                                    <option value="Type 2" >Ship type 2</option>
+                                    <option value="Type 3">Ship type 3</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="newShipImg">Ship Image</label>
+                                <input type="text" class="form-control" id="newShipImg" />
+                                <img src="" id="selectedImg" class="thumbnail" width="75" height="75" />
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button onclick="spacePort.Land();" class="btn btn-block btn-primary">Add </button>
+                            <button class="btn btn-block btn-warning hidden">Update </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="spaceList" class="col-md-7">
+
+                    
+                   
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="updatePanel" class="modal fade"
+         tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Space Ship Operation
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="updateShipName">Ship name</label>
+                                <input type="text" class="form-control" id="updateShipName" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="updateShipType">Ship Type</label>
+                                <select class="form-control" id="updateShipType">
+                                    <option selected>Select</option>
+                                    <option value="Type 1">Ship Type 1</option>
+                                    <option value="Type 2">Ship type 2</option>
+                                    <option value="Type 3">Ship type 3</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="updateShipImg">Ship Image</label>
+                                <input type="text" class="form-control" id="updateShipImg" />
+                                <img  id="updateSelectedImg" class="thumbnail" width="75" height="75" />
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                           <input type="hidden" id="indexToUpdate" />
+                            <button onclick="spacePort.saveShip()"
+                                     class="btn btn-block btn-warning">Update </button>
+                        </div>
+                    </div>
+                </div></div></div></div>
+
+                <script src="Scripts/jquery-2.1.1.js"></script>
+                <script src="Scripts/bootstrap.js"></script>
+                <script src="script.js"></script>
+
+
+                <script>
+                    spacePort.makeReady();
+
+
+                    $('#newShipImg').change(function () {
+                        var url = $('#newShipImg').val();
+                        $('#selectedImg').attr('src', url);
+                    });
+
+                    $('#updateShipImg').change(function () {
+                        var url = $('#updateShipImg').val();
+                        $('#updateSelectedImg').attr('src', url);
+                    });
+
+                   
+                </script>
+</body>
+</html>
