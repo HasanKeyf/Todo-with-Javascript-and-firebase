@@ -1,7 +1,7 @@
 ﻿
 var studentsApp = {
     studentsArray: [],
-    fireBaseUrl: "https://hccsport.firebaseio.com/students/"
+    fireBaseUrl: "{firebaseio url /students/}"
 };
 
 studentsApp.getStudent = function () {
